@@ -1,0 +1,260 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Billy Johnson · Cybersecurity Instructor</title>
+<meta name="description" content="Billy Johnson: cybersecurity instructor, disabled U.S. Army National Guard veteran and veteran mentor. Builder of the Cyber Warrior Program, interactive CompTIA A+, Network+, Security+ and CySA+ training for veterans.">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='7' fill='%230f1f4d'/%3E%3Cpath d='M16 5l9 3.5v7c0 5.6-3.8 9.8-9 11.5-5.2-1.7-9-5.9-9-11.5v-7z' fill='none' stroke='%23e8b923' stroke-width='2.4' stroke-linejoin='round'/%3E%3Cpath d='M11.5 16l3.2 3.2 6-6.4' fill='none' stroke='%23f5f7ff' stroke-width='2.4' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Atkinson+Hyperlegible:wght@400;700&family=Barlow+Semi+Condensed:wght@600;700&display=swap">
+<script>
+  /* Easier reading: on stays on, across pages and visits. Set before the page paints, so it never flickers. */
+  try { if (localStorage.getItem("bj-easier-reading") === "1") document.documentElement.classList.add("easier"); } catch (e) {}
+</script>
+<style>
+  /* Royal palette: navy and royal blue, a gold rule, silver ground, purple for the second voice.
+     Every text pairing below is WCAG AAA (7:1 body, 4.5:1 large), measured on the painted page by verify/page.mjs. */
+  :root {
+    --navy: #0f1f4d;
+    --royal: #1e3a8a;
+    --purple: #4b2a85;
+    --gold: #e8b923;
+    --silver: #eef1f6;
+    --line: #c9d1e1;
+    --card: #ffffff;
+    --ink: #10172e;
+    --soft-ink: #2b3553;
+    --on-dark: #f5f7ff;
+    --display: "Barlow Semi Condensed", "Arial Narrow", Arial, sans-serif;
+    --body: "Atkinson Hyperlegible", -apple-system, "Segoe UI", Roboto, Arial, sans-serif;
+  }
+  * { box-sizing: border-box; }
+  html { scroll-padding-top: 1rem; }
+  body { margin: 0; background: var(--silver); color: var(--ink); font: 17px/1.6 var(--body); }
+  /* easier reading: wider letter and word spacing, taller lines, a little larger */
+  .easier body { font-size: 18.5px; line-height: 1.8; letter-spacing: 0.03em; word-spacing: 0.12em; }
+  a { color: var(--royal); text-underline-offset: 3px; }
+  a:hover { color: var(--purple); }
+  :focus-visible { outline: 3px solid var(--gold); outline-offset: 3px; }
+  .wrap { max-width: 1040px; margin: 0 auto; padding: 0 20px; }
+
+  /* the header band */
+  .band { background: linear-gradient(150deg, #0b1738 0%, var(--navy) 45%, #1a2f72 100%); color: var(--on-dark); position: relative; }
+  .band::after { content: ""; position: absolute; left: 0; right: 0; bottom: 0; height: 5px; background: var(--gold); }
+  .band .wrap { padding-top: 22px; padding-bottom: 46px; display: grid; gap: 14px; }
+  .topline { display: flex; justify-content: flex-end; }
+  .easier-btn { font: 700 14px var(--body); color: var(--on-dark); background: transparent; border: 2px solid rgba(245,247,255,0.7); border-radius: 999px; padding: 6px 14px; cursor: pointer; }
+  .easier-btn:hover { background: rgba(245,247,255,0.12); }
+  .eyebrow { margin: 0; font: 700 0.95rem var(--body); letter-spacing: 0.12em; text-transform: uppercase; color: var(--gold); }
+  h1 { margin: 0; font: 700 clamp(2.6rem, 7vw, 4.4rem)/1 var(--display); letter-spacing: 0.01em; }
+  .roles { margin: 0; font-size: 1.12rem; font-weight: 700; }
+  .roles span { white-space: nowrap; }
+  .thesis { margin: 6px 0 0; max-width: 40rem; font-size: 1.2rem; line-height: 1.55; }
+  .links-row { display: flex; flex-wrap: wrap; gap: 10px; margin-top: 8px; }
+  .pill { display: inline-flex; align-items: center; gap: 8px; padding: 9px 18px; border-radius: 999px; font-weight: 700; text-decoration: none; }
+  .pill.solid { background: var(--on-dark); color: var(--navy); }
+  .pill.solid:hover { background: var(--gold); color: var(--navy); }
+  .pill.ghost { color: var(--on-dark); border: 2px solid rgba(245,247,255,0.7); }
+  .pill.ghost:hover { background: rgba(245,247,255,0.12); color: var(--on-dark); }
+  .certs { display: flex; flex-wrap: wrap; gap: 8px; margin: 10px 0 0; padding: 0; list-style: none; }
+  .certs li { border: 1px solid rgba(232,185,35,0.8); color: var(--on-dark); border-radius: 6px; padding: 3px 10px; font-size: 0.92rem; font-weight: 700; }
+
+  main { padding: 40px 0 10px; }
+  section { margin-bottom: 44px; }
+  h2 { margin: 0 0 14px; font: 700 2rem/1.1 var(--display); color: var(--navy); display: flex; align-items: center; gap: 12px; }
+  h2::before { content: ""; width: 10px; height: 28px; background: var(--gold); border-radius: 2px; flex: none; }
+  h3 { margin: 0; font: 700 1.35rem/1.2 var(--display); color: var(--navy); }
+  p { margin: 0 0 12px; }
+  .lede { max-width: 46rem; }
+
+  /* about: the story beside the service record */
+  .about { display: grid; grid-template-columns: minmax(0, 1.6fr) minmax(0, 1fr); gap: 28px; align-items: start; }
+  .record { background: var(--card); border: 1px solid var(--line); border-top: 5px solid var(--purple); border-radius: 10px; padding: 18px 20px; }
+  .record h3 { color: var(--purple); margin-bottom: 8px; }
+  .record ul { margin: 0; padding-left: 20px; }
+  .record li { margin-bottom: 6px; }
+  .creed { margin-top: 18px; padding: 16px 20px; border-left: 5px solid var(--royal); background: var(--card); border-radius: 0 10px 10px 0; }
+  .creed p { margin: 0 0 8px; }
+  .creed .line { font-weight: 700; color: var(--navy); }
+  .creed p:last-child { margin: 0; }
+
+  /* how it's built */
+  .how { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 14px; margin: 18px 0 6px; padding: 0; list-style: none; }
+  .how li { background: var(--card); border: 1px solid var(--line); border-radius: 10px; padding: 14px 16px; }
+  .how b { display: block; color: var(--navy); margin-bottom: 4px; }
+
+  /* featured builds */
+  .builds { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 16px; margin: 0; padding: 0; list-style: none; }
+  .build { background: var(--card); border: 1px solid var(--line); border-radius: 12px; padding: 18px 20px; display: flex; flex-direction: column; gap: 8px; }
+  .build .track { align-self: flex-start; font-size: 0.86rem; font-weight: 700; color: var(--purple); border: 1px solid var(--purple); border-radius: 999px; padding: 1px 10px; }
+  .build p { margin: 0; flex: 1; }
+  .build .go { display: flex; flex-wrap: wrap; gap: 14px; font-weight: 700; }
+  .build.wide { grid-column: 1 / -1; border-top: 5px solid var(--gold); }
+
+  /* everything else, by kind */
+  .more { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 14px 28px; }
+  .more h3 { font-size: 1.15rem; margin-bottom: 4px; }
+  .more p { margin: 0; }
+  .tools { display: flex; flex-wrap: wrap; gap: 8px; margin: 0; padding: 0; list-style: none; }
+  .tools li { background: var(--card); border: 1px solid var(--line); border-radius: 6px; padding: 4px 12px; font-weight: 700; }
+
+  footer { border-top: 1px solid var(--line); padding: 20px 0 34px; font-size: 0.92rem; color: var(--soft-ink); }
+  footer p { margin: 0 0 6px; max-width: 46rem; }
+
+  @media (max-width: 820px) {
+    .about, .builds, .more, .how { grid-template-columns: minmax(0, 1fr); }
+    .roles span { white-space: normal; }
+  }
+  @media (prefers-reduced-motion: no-preference) { .pill, .easier-btn { transition: background 0.15s ease, color 0.15s ease; } }
+</style>
+</head>
+<body>
+
+<header class="band">
+  <div class="wrap">
+    <div class="topline"><button class="easier-btn" id="easier" type="button" aria-pressed="false">Easier reading: off</button></div>
+    <p class="eyebrow">Portfolio</p>
+    <h1>Billy Johnson</h1>
+    <p class="roles"><span>Cybersecurity Instructor</span> · <span>Disabled U.S. Army National Guard Veteran</span> · <span>Veteran Mentor</span></p>
+    <p class="thesis">I build hands-on IT and cybersecurity training for veterans, and I hold it to one standard: a student should leave able to do the work, not just pass the test.</p>
+    <div class="links-row">
+      <a class="pill solid" href="https://www.linkedin.com/in/billy-johnson-986b89354" rel="noopener">Connect on LinkedIn</a>
+      <a class="pill ghost" href="https://github.com/RafikiScyent888" rel="noopener">GitHub profile</a>
+      <a class="pill ghost" href="#program">See what I've built</a>
+    </div>
+    <ul class="certs" aria-label="Certifications held">
+      <li>CompTIA A+</li><li>CompTIA Network+</li><li>CompTIA Security+</li><li>CompTIA CySA+</li>
+    </ul>
+  </div>
+</header>
+
+<main class="wrap">
+
+  <section aria-labelledby="about-h">
+    <h2 id="about-h">About</h2>
+    <div class="about">
+      <div>
+        <p>I'm an Instructor I with MyComputerCareer, where I teach CompTIA A+, Network+, Security+ and CySA+ to veterans moving into technology careers, and mentor them through that move.</p>
+        <p>My service taught me to adapt quickly, solve problems with limited resources, and communicate clearly under pressure. Those are the same skills that carry a technician through a hard ticket, and they're what I build on with every student.</p>
+        <div class="creed">
+          <p>How does a student get past memorizing and into troubleshooting? With a steady foundation first, then complexity added one layer at a time, so every new idea is anchored to one they already own.</p>
+          <p class="line">Foundation first. Then build.</p>
+          <p>That's how the fundamentals stop being trivia and start being skill.</p>
+        </div>
+      </div>
+      <aside class="record" aria-labelledby="service-h">
+        <h3 id="service-h">Service</h3>
+        <p>U.S. Army National Guard</p>
+        <ul>
+          <li>Human resources operations</li>
+          <li>Deployment support in Afghanistan as a postal inspector</li>
+          <li>Horizontal engineer, operating heavy equipment</li>
+        </ul>
+      </aside>
+    </div>
+  </section>
+
+  <section id="program" aria-labelledby="program-h">
+    <h2 id="program-h">The Cyber Warrior Program</h2>
+    <p class="lede">The Cyber Warrior Program is the study platform I design for my students: more than 35 free, interactive study sites across A+, Network+, Security+ and CySA+, gathered in one Command Center.</p>
+    <p class="lede"><b>How it's built:</b> I design every build as the instructor, from the objectives it covers to the scenarios, the hints and the accessibility rules, and I test it against what my students actually need. The code is written with AI-assisted development (Claude Code) under my direction, and new builds are tested in a real browser, against their objectives, before students see them.</p>
+    <ul class="how">
+      <li><b>Objectives first</b>Every question and lab is filed to the current exam objectives, and each topic carries at least 20 questions.</li>
+      <li><b>Built for every reader</b>The program's standard is WCAG AAA contrast, checked on the rendered page, with dyslexia-friendly reading, because many of my students carry vision damage from their service.</li>
+      <li><b>Hints that guide</b>Unlimited tries, hints that point to the evidence instead of the answer, and wrong options that are real near misses.</li>
+    </ul>
+  </section>
+
+  <section aria-labelledby="builds-h">
+    <h2 id="builds-h">Featured builds</h2>
+    <ul class="builds">
+      <li class="build wide">
+        <h3>Cyber Warrior Command Center</h3>
+        <p>The front door to the whole program: every study site in one searchable hub, organized by certification track.</p>
+        <div class="go"><a href="https://rafikiscyent888.github.io/Cyber-Warrior-Command-Center-2.0/" rel="noopener">Open the Command Center</a><a href="https://github.com/RafikiScyent888/Cyber-Warrior-Command-Center-2.0" rel="noopener">Code</a></div>
+      </li>
+      <li class="build">
+        <span class="track">Network+</span><h3>The E4 Mafia Network</h3>
+        <p>A help-desk lab: work tickets on a simulated home network with real commands, router pages, cables and live 3D models of the gear, then build client networks from a work order the network checks itself.</p>
+        <div class="go"><a href="https://rafikiscyent888.github.io/The-E4-Mafia-Network/" rel="noopener">Open it</a><a href="https://github.com/RafikiScyent888/The-E4-Mafia-Network" rel="noopener">Code</a></div>
+      </li>
+      <li class="build">
+        <span class="track">A+ Core 2</span><h3>A+ Core 2 Under the Hood Labs</h3>
+        <p>The whole screen is a work laptop at a fictional IT company: take help desk tickets and fix PCs, phones, routers and mail with Windows' own tools, then see each scenario the way the exam presents it.</p>
+        <div class="go"><a href="https://rafikiscyent888.github.io/A-Core-2-Under-the-Hood-/" rel="noopener">Open it</a><a href="https://github.com/RafikiScyent888/A-Core-2-Under-the-Hood-" rel="noopener">Code</a></div>
+      </li>
+      <li class="build">
+        <span class="track">A+ Core 1</span><h3>A+ Core 1 Under the Hood Labs</h3>
+        <p>Eight generated labs: RAID, printers, workstation builds, power, wireless, mobile, networking and displays. The mechanism is the point, and students live with their choices.</p>
+        <div class="go"><a href="https://rafikiscyent888.github.io/A-Core-1-under-the-hood-labs/" rel="noopener">Open it</a><a href="https://github.com/RafikiScyent888/A-Core-1-under-the-hood-labs" rel="noopener">Code</a></div>
+      </li>
+      <li class="build">
+        <span class="track">Security+</span><h3>Security Start-up Firewall</h3>
+        <p>Inherit a home network someone set up badly, find out what it's really doing from the log, and fix it. Five tiers, from a house to a business the student runs and defends.</p>
+        <div class="go"><a href="https://rafikiscyent888.github.io/Security-Start-up-Firewall/" rel="noopener">Open it</a><a href="https://github.com/RafikiScyent888/Security-Start-up-Firewall" rel="noopener">Code</a></div>
+      </li>
+      <li class="build">
+        <span class="track">CySA+</span><h3>Veterans Overcoming the Odds SOC</h3>
+        <p>Switch seats from owner to analyst: work a live alert queue across five tiers, from first-shift triage to running an incident.</p>
+        <div class="go"><a href="https://rafikiscyent888.github.io/Veterans-Overcoming-Odds-SOC/" rel="noopener">Open it</a><a href="https://github.com/RafikiScyent888/Veterans-Overcoming-Odds-SOC" rel="noopener">Code</a></div>
+      </li>
+      <li class="build">
+        <span class="track">All tracks</span><h3>Face Off Games</h3>
+        <p>A live classroom review game with team buzzers, one for each certification track.</p>
+        <div class="go"><a href="https://rafikiscyent888.github.io/Face-Off-Games/" rel="noopener">Open it</a></div>
+      </li>
+      <li class="build">
+        <span class="track">All tracks</span><h3>Practice exams</h3>
+        <p>3,726 practice questions across A+ Core 1, A+ Core 2, Network+, Security+ and CySA+, each filed to its exam objective, every answer explained, with a retake of the ones missed.</p>
+        <div class="go"><a href="https://rafikiscyent888.github.io/Core-1-quizzes/" rel="noopener">A+ Core 1</a><a href="https://rafikiscyent888.github.io/Core-2-quizzes/" rel="noopener">A+ Core 2</a><a href="https://rafikiscyent888.github.io/Network-quizzes/" rel="noopener">Network+</a><a href="https://rafikiscyent888.github.io/Security-Questions/" rel="noopener">Security+</a><a href="https://rafikiscyent888.github.io/CySA-questions/" rel="noopener">CySA+</a></div>
+      </li>
+      <li class="build">
+        <span class="track">Supplementary</span><h3>PSRDM Study Hub</h3>
+        <p>A study guide and 160-question test bank for the VA Physical Security and Resiliency Design Manual, with pause and resume for long study sessions.</p>
+        <div class="go"><a href="https://rafikiscyent888.github.io/Physical-Security-and-Resiliency-Design-/" rel="noopener">Open it</a><a href="https://github.com/RafikiScyent888/Physical-Security-and-Resiliency-Design-" rel="noopener">Code</a></div>
+      </li>
+    </ul>
+  </section>
+
+  <section aria-labelledby="more-h">
+    <h2 id="more-h">Also in the program</h2>
+    <div class="more">
+      <div><h3>Simulations</h3><p><a href="https://rafikiscyent888.github.io/Core-1-Sims/">A+ Core 1</a> · <a href="https://rafikiscyent888.github.io/Core-2-Sims/">A+ Core 2</a> · <a href="https://rafikiscyent888.github.io/Network-Sims/">Network+</a> · <a href="https://rafikiscyent888.github.io/Security-Sims/">Security+</a> · <a href="https://rafikiscyent888.github.io/CySA-Sims/">CySA+</a></p></div>
+      <div><h3>Acronym games</h3><p>846 acronyms: <a href="https://rafikiscyent888.github.io/A-acronym-games./">A+</a> · <a href="https://rafikiscyent888.github.io/Network-Acronyms/">Network+</a> · <a href="https://rafikiscyent888.github.io/Security-Acronyms/">Security+</a> · <a href="https://rafikiscyent888.github.io/CySA-Acronyms/">CySA+</a></p></div>
+      <div><h3>Interactive labs</h3><p><a href="https://rafikiscyent888.github.io/A-Core-1-Field-Service-Center/">A+ Core 1 Field Service Center</a> · <a href="https://rafikiscyent888.github.io/A-Core-2-Field-Service-Center/">A+ Core 2 Field Service Center</a> · <a href="https://rafikiscyent888.github.io/Patch-Bay/">Patch Bay</a> · <a href="https://rafikiscyent888.github.io/OSI-Model/">OSI Model Lab</a> · <a href="https://rafikiscyent888.github.io/Subnet-Calculator-for-Network/">Subnet Calculator</a> · <a href="https://rafikiscyent888.github.io/IPv6-Drills/">IPv6 &amp; EUI-64 Drills</a> · <a href="https://rafikiscyent888.github.io/Security-Awareness-Center/">Security Awareness Center</a> · <a href="https://rafikiscyent888.github.io/CySA-CVSS-Center/">CySA CVSS Center</a></p></div>
+      <div><h3>Everyday tools</h3><p><a href="https://rafikiscyent888.github.io/Port-Quiz/">Port Quiz</a> · <a href="https://rafikiscyent888.github.io/Windows-Linux-Commands/">Windows &amp; Linux Commands</a> · <a href="https://rafikiscyent888.github.io/Cloud-aaS-Learning-Hub/">Cloud Ops: Basic Training</a> · <a href="https://rafikiscyent888.github.io/Shane-s-Retake-Planner-2.0/">Shane's Retake Planner</a></p></div>
+    </div>
+  </section>
+
+  <section aria-labelledby="tools-h">
+    <h2 id="tools-h">Tools I work with</h2>
+    <ul class="tools">
+      <li>HTML</li><li>CSS</li><li>JavaScript</li><li>Python</li><li>Claude Code (AI-assisted development)</li><li>GitHub and GitHub Pages</li><li>PowerPoint</li>
+    </ul>
+  </section>
+
+</main>
+
+<footer>
+  <div class="wrap">
+    <p>Last updated 17 October 2026.</p>
+    <p>Cyber Warrior Program — built by an instructor, for students, to make certification study more interactive. For educational purposes only. Not affiliated with, endorsed by, or sponsored by CompTIA®. All trademarks belong to their respective owners.</p>
+  </div>
+</footer>
+
+<script>
+  (function () {
+    var b = document.getElementById("easier"), root = document.documentElement;
+    function paint() { var on = root.classList.contains("easier"); b.setAttribute("aria-pressed", String(on)); b.textContent = "Easier reading: " + (on ? "on" : "off"); }
+    b.addEventListener("click", function () {
+      var on = !root.classList.contains("easier"); root.classList.toggle("easier", on);
+      try { localStorage.setItem("bj-easier-reading", on ? "1" : "0"); } catch (e) {}
+      paint();
+    });
+    paint();
+  })();
+</script>
+</body>
+</html>
