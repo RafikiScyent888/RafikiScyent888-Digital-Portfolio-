@@ -6,7 +6,7 @@
                 (REPOS), the LinkedIn profile, or a place on this page. No
                 email address anywhere (the owner: LinkedIn only).
    2. FACTS     the name, the three roles, exactly the four certifications
-                held, the verified counts (3,726 questions, 846 acronyms),
+                held, the emerald banner (the owner's pick, 17 October 2026), the verified counts (3,726 questions, 846 acronyms),
                 and the plain statement of how the builds are made
    3. FOOTER    the full Cyber Warrior Program wording, and a "Last updated"
    4. CONTRAST  WCAG AAA on painted pixels (7:1 body, 4.5:1 large), desk and
@@ -116,6 +116,8 @@ async function run(dir, port) {
         /* 2. facts */
         const text = (await page.textContent("body")).replace(/\s+/g, " ");
         FACTS.forEach(f => { if (!text.includes(f)) fail("facts", `the page doesn't say "${f}"`); });
+        const band = await page.$eval(".band", n => getComputedStyle(n).backgroundImage);
+        if (!/rgb\(8, 60, 41\).*rgb\(11, 77, 53\).*rgb\(13, 92, 63\)/.test(band)) fail("facts", `the banner isn't the owner's emerald: ${band.slice(0, 90)}`);
         const certs = await page.$$eval(".certs li", ls => ls.map(l => l.textContent.trim()));
         if (JSON.stringify(certs) !== JSON.stringify(CERTS)) fail("facts", `certifications listed: ${JSON.stringify(certs)}`);
         /* 3. footer */
@@ -134,6 +136,7 @@ async function run(dir, port) {
       for (const easier of [false, true]) {
         await page.evaluate(on => document.documentElement.classList.toggle("easier", on), easier);
         const tag = `${vp.name}, easier reading ${easier ? "on" : "off"}`;
+        await page.mouse.move(vp.width - 2, vp.height - 2); await page.waitForTimeout(60);   /* at rest: the mouse off every control */
         let r = await contrast(page); r.bad.forEach(b => fail("contrast", `${tag}: ${b}`));
         if (r.n < 60) fail("contrast", `${tag}: only ${r.n} text runs measured; the sweep isn't seeing the page`);
         for (const sel of [".pill.solid", ".pill.ghost", ".build .go a", "#easier"]) {
@@ -155,6 +158,8 @@ const PLANTS = {
   nocert: { catches: "facts", fn: s => s.replace("<li>CompTIA CySA+</li>", "") },
   wrongcount: { catches: "facts", fn: s => s.replace("3,726 practice questions", "4,000 practice questions") },
   noauthorship: { catches: "facts", fn: s => s.replace(" with AI-assisted development (Claude Code) under my direction", "") },
+  navyagain: { catches: "facts", fn: s => s.replace("--band-bg: linear-gradient(150deg, #083c29 0%, #0b4d35 50%, #0d5c3f 100%);", "--band-bg: linear-gradient(150deg, #0b1738 0%, var(--navy) 45%, #1a2f72 100%);") },
+  lighthover: { catches: "contrast", fn: s => s.replace("--band-hover: rgba(0,0,0,0.22);", "--band-hover: rgba(245,247,255,0.12);") },
   shortfooter: { catches: "footer", fn: s => s.replace("Cyber Warrior Program — built by an instructor, for students, to make certification study more interactive. ", "") },
   goldtext: { catches: "contrast", fn: s => s.replace("  .build .track { align-self: flex-start; font-size: 0.86rem; font-weight: 700; color: var(--purple);", "  .build .track { align-self: flex-start; font-size: 0.86rem; font-weight: 700; color: var(--gold);") },
   greyfooter: { catches: "contrast", fn: s => s.replace("--soft-ink: #2b3553;", "--soft-ink: #7a8199;") },

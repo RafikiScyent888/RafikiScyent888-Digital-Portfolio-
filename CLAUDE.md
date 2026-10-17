@@ -46,6 +46,12 @@ hyperlink to add to my resume."
 - **Facts come from the owner's own July draft** (repo `Billy-Johnson`): the
   roles, the MyComputerCareer role, the National Guard service, the teaching
   approach. Invent nothing about the owner; ask.
+- **Banner:** emerald (`#083c29` to `#0d5c3f`), the owner's pick of six greens
+  previewed on the real page on 17 October 2026 (Forest, Emerald, Moss, Sage,
+  Mint, Pistachio): "B, please." Its colours are the `--band-*` and `--pill-*`
+  variables in `index.html`, so a later change touches only those. On a green
+  this deep, buttons darken on hover (a light tint dropped their lettering to
+  6.5:1), and the PORTFOLIO label is cream-gold at large size.
 - **Voice:** the owner's saved writing style (the `my-writing-style` skill),
   in its professional register: measured, firm, no jargon, one question and
   answer, a little "steadfast, anchored" vocabulary.
@@ -76,7 +82,8 @@ the owner's account settings, which a session can't reach.
 `node verify/page.mjs`: links (every one to a site the Command Center links
 to, a repo on the account, LinkedIn, or this page; no email), the facts and
 the four certifications, the footer and date, AAA on painted pixels, easier
-reading staying on, no sideways scroll. `--plant` runs ten planted mistakes,
-all caught (17 October 2026). The check measures with reduced motion: a
+reading staying on, no sideways scroll. `--plant` runs twelve planted mistakes,
+all caught (17 October 2026), including the banner going back to navy and
+the light hover tint coming back. The check measures with reduced motion: a
 screenshot taken mid colour-fade measures the fade, which once reported the
 header buttons at 2:1 when they were fine.
